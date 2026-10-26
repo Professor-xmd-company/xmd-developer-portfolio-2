@@ -47,3 +47,26 @@ Chrome-removal checks on the 390 × 844 render:
 - `qa/reference-mobile-web-target.png` — transformed reference target.
 - `qa/desktop-after-mobile-change.png` — unchanged desktop render after mobile work.
 - `qa/browser-comparison-desktop.png`, `qa/browser-comparison-mobile.png` — original side-by-side comparisons.
+
+## 5. Live deployment
+
+- GitHub repo: **https://github.com/Professor-xmd-company/xmd-developer-portfolio-2**
+- Vercel live: **https://xmd-developer-portfolio-2.vercel.app**
+- Deployment URL: `https://xmd-developer-portfolio-2-jo8of8qky.vercel.app`
+
+HTTP checks after deployment:
+
+| Check | Result |
+|---|---|
+| `/` | **HTTP 200** |
+| `/?view=mobile` | **HTTP 200** |
+| `/?view=desktop` | **HTTP 200** |
+| `/standalone.html` | **HTTP 200** |
+| `/assets/overlay-mobile-web.png` | **HTTP 200** |
+| GitHub repo page | **HTTP 200** |
+
+Live Chromium checks: 0 console errors, 0 warnings, 0 failed resources, 13 mobile hotspots, mobile stage covers `389.98 × 844` of a `390 × 844` viewport, and the live mobile/desktop screenshots are pixel-identical to the local renders (MAE 0.0).
+
+- `qa/live-mobile-390.png` — live phone render.
+- `qa/live-desktop.png` — live desktop render.
+- `qa/DEPLOY-RESULT.md` — deployment verification record.
