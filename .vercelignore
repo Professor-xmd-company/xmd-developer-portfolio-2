@@ -1,0 +1,5 @@
+qa/*.png
+*.py
+reference/
+__pycache__/
+*.zip

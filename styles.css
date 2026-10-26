@@ -1,0 +1,117 @@
+:root {
+  color-scheme: dark;
+  --bg: #00030e;
+  --ink: #f4f6ff;
+  --focus: #8c6bff;
+}
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background:
+    radial-gradient(ellipse 900px 620px at 0% 12%, rgba(60, 20, 160, .20), transparent 68%),
+    radial-gradient(ellipse 900px 620px at 100% 12%, rgba(38, 16, 118, .18), transparent 68%),
+    radial-gradient(ellipse 1100px 360px at 50% 102%, rgba(84, 15, 130, .20), transparent 70%),
+    var(--bg);
+  color: var(--ink);
+  font-family: Inter, "Plus Jakarta Sans", Manrope, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* The fixed 1536×1024 / 1024×1536 design is scaled as a single unit so every
+   position, colour and proportion stays mathematically identical to the artwork. */
+#stage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1536px;
+  height: 1024px;
+  overflow: hidden;
+  background: var(--bg);
+  transform: translate(-50%, -50%) scale(var(--s, 1));
+  transform-origin: center center;
+  isolation: isolate;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.layer {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  image-rendering: auto;
+}
+
+#bg       { inset: 0; width: 100%; height: 100%; object-fit: fill; z-index: 1; }
+#waveGlow { inset: 0; width: 100%; height: 100%; object-fit: fill; z-index: 2; mix-blend-mode: screen; }
+#wave     { left: 0; top: 134px; width: 1536px; height: 294px; z-index: 3; }
+#portrait { left: 788px; top: 71px; width: 360px; height: 360px; z-index: 4; }
+#overlay  { inset: 0; width: 100%; height: 100%; object-fit: fill; z-index: 5; }
+
+/* Transparent, fully functional hotspots sit above the pixel-locked artwork. */
+#links {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#links a {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  text-indent: -9999px;
+  white-space: nowrap;
+  color: transparent;
+  background: transparent;
+  border: 0;
+  border-radius: 10px;
+  pointer-events: auto;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#links a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 0 1px rgba(163, 132, 255, .72),
+    0 0 18px rgba(113, 75, 255, .35);
+  opacity: 0;
+  transition: opacity .16s ease;
+}
+
+#links a:hover::after,
+#links a:focus-visible::after { opacity: 1; }
+
+#links a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(140, 107, 255, .45);
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #links a::after { transition: none; }
+}

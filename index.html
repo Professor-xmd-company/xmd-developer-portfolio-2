@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#00030e">
+  <meta name="description" content="XMD — Software Developer portfolio. A pixel-accurate recreation of the supplied desktop and mobile designs.">
+  <title>XMD / Developer — Portfolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Semantic content for search engines, screen readers and text selection.
+       The visible composition is a pixel-locked layer stack generated from the supplied artwork. -->
+  <main class="sr-only" aria-label="Portfolio content">
+    <h1>I’m a Software Developer who builds modern web experiences.</h1>
+    <p>I create fast, beautiful and scalable web applications using modern technologies. Turning ideas into real products.</p>
+
+    <nav aria-label="Sections">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home" aria-label="Introduction">
+      <p>Hello, I’m XMD.</p>
+      <p><a href="#projects">View My Projects</a> · <a href="assets/XMD-CV.pdf" download>Download CV</a></p>
+      <p>Building clean code, better tomorrow. Frontend Developer. Turning ideas into real products.</p>
+    </section>
+
+    <section id="about" aria-label="About me">
+      <h2>Turning ideas into real products.</h2>
+      <p>I’m a Computer Science student with a passion for building useful digital solutions. I love learning new technologies, solving problems and creating experiences that make life easier.</p>
+      <p>1+ Projects Completed · 1+ Technologies · 100% Passion</p>
+      <ul>
+        <li>Web Development — React, Next.js, Tailwind CSS</li>
+        <li>Backend Development — Node.js, Express, Python</li>
+        <li>Databases — MongoDB, PostgreSQL, Supabase</li>
+        <li>Tools &amp; Others — Git, Docker, VS Code</li>
+      </ul>
+      <blockquote>“Great software is not just about code, it’s about solving real problems.”</blockquote>
+    </section>
+
+    <section id="skills" aria-label="Skills">
+      <h2>Tools I Work With</h2>
+      <p>I use modern technologies to build fast, scalable and user-friendly applications.</p>
+      <p>React, Next.js, Tailwind CSS, Node.js, Python, MongoDB, Git, Docker.</p>
+      <a href="#skills">View All Skills</a>
+    </section>
+
+    <section id="projects" aria-label="Featured projects">
+      <h2>Some of My Works</h2>
+      <p>Here are a few projects I’ve built to showcase my skills and creativity.</p>
+      <a href="#projects">View All Projects</a>
+      <article id="launchshield"><h3>LaunchShield</h3><p>Web App — Security scanning platform for students and developers.</p></article>
+      <article id="xmd-computer"><h3>XMD Computer</h3><p>AI Tool — AI-powered development assistant with multi-agent.</p></article>
+      <article id="personal-portfolio"><h3>Personal Portfolio</h3><p>Portfolio — Modern and responsive portfolio website.</p></article>
+    </section>
+
+    <footer id="contact" aria-label="Contact">
+      <p>© 2025 XMD. Built with passion and code.</p>
+      <p><a href="mailto:hello@xmd.dev">Email</a> · <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://x.com/" target="_blank" rel="noopener noreferrer">X</a> · <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    </footer>
+  </main>
+
+  <div id="stage" data-mode="desktop" aria-hidden="false">
+    <img id="bg" class="layer" alt="" draggable="false" src="assets/bg-desktop.png">
+    <img id="waveGlow" class="layer" alt="" draggable="false" src="assets/wave-glow-desktop.png">
+    <canvas id="wave" class="layer" aria-hidden="true"></canvas>
+    <img id="portrait" class="layer" alt="Portrait of XMD" draggable="false" src="assets/portrait-desktop.png">
+    <img id="overlay" class="layer" alt="" draggable="false" src="assets/overlay-desktop.png">
+    <nav id="links" aria-label="Interactive areas"></nav>
+  </div>
+
+  <script src="wave.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
