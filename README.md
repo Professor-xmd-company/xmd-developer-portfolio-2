@@ -44,3 +44,11 @@ Without a query parameter, the page automatically uses the desktop design on lan
 - Replace `assets/XMD-CV.pdf` with the real CV; the button already uses `download`.
 - If you edit the source screenshots or portrait, run `python generate_assets.py` to rebuild the pixel-locked layers.
 - The visible typography, cards, icons, borders, gradients and project thumbnails are preserved as artwork-derived layers so the supplied colours remain exact. The hidden semantic HTML keeps the page readable and navigable for assistive technology.
+
+
+## Live deployment
+
+- GitHub: https://github.com/Professor-xmd-company/xmd-developer-portfolio-2
+- Vercel: https://xmd-developer-portfolio-2.vercel.app
+- Force desktop: https://xmd-developer-portfolio-2.vercel.app/?view=desktop
+- Force mobile: https://xmd-developer-portfolio-2.vercel.app/?view=mobile
